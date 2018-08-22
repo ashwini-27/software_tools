@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<title>
+		Registration form
+	</title>
+</head>
+<body  >
+
+<div >
+	   
+</div>
+<form class="form-horizontal row" action="registration.php" method="get" >
+<div class="col-sm-3">
+</div>
+<div class="col-sm-6">
+
+
+<!--<div class="well"> <img src="big.png" class="img-circle " alt="Cinque Terre" width="304" height="236";"></div>-->
+ 
+		<div class="form-group">
+					<legend class="well">person information</legend>
+			
+					<div class="form-group">
+					<label class="control-label col-sm-3" >Name:</label>
+					<div class="col-sm-6" >
+					<input class="form-control" type="text" name="username" placeholder="john doe"/>
+					</div>
+					<div class="col-sm-3"></div>
+					</div>
+
+
+					<div class="form-group">
+					<label class="control-label col-sm-3";">Email:</label>
+					<div class="col-sm-6">
+					<input type="email" class="form-control" name="user_email" required placeholder="abc@example.com"/>
+					</div>
+
+					<div class="col-sm-3"></div>
+					</div>
+
+
+					<div class="form-group">
+					<label class="control-label col-sm-3" style="float: left;">Password:</label>
+					<div class="col-sm-6">
+					<input type="Password" name="userpass" value="" required/>
+					</div>
+
+					<div class="col-sm-3"></div>
+					</div>
+
+
+					<div class="form-group">
+					<label class="control-label col-sm-3" style="float: left;"> Confirm Password:</label>
+					<div class="col-sm-6">
+					<input type="Password" name="usercpass" value="" required/>
+					</div>
+
+					<div class="col-sm-3"></div>
+					</div>
+
+
+					<div class="form-group">
+					<label class="control-label col-sm-3" style="float: left;">profile photo</label>
+					<div class="col-sm-6">
+					<input type="file" name="userprofile" />
+					</div>
+
+					<div class="col-sm-3"></div>
+					</div>
+			<!--<div class="col-sm-3"/>
+		</div>
+
+	</div>-->
+</div>
+
+
+		<div class="form-group">
+		
+		<legend class="well">Educational Information</legend>
+		
+				<div class="form-group">	
+				<label class="control-label col-sm-3" >Course:</label>
+				<div class="col-sm-6">
+				<select id="course_options" class="form-control" required>
+					<option value="bt">B.Tech</option>
+					<option value="mt">M.Tech</option>
+					<option value="Ms">M.Sc</option>
+					
+					<option value="ph">Phd</option>
+				</select>
+				</div>
+				</div>
+
+
+				<div class="form-group">
+				<label class="control-label col-sm-3" >Area of Study:</label>
+				<div class="col-sm-6">
+				<select id="course_options" class="form-control"  required>
+					<option value="bt">B.Tech</option>
+					<option value="mt">M.Tech</option>
+					<option value="Ms">M.Sc</option>
+					
+					<option value="ph">Phd</option>
+				</select>
+				</div>
+				</div>
+
+
+
+
+				<div class="form-group">
+
+				<label class="control-label col-sm-3" >Registration number</label>
+				<div class="col-sm-6">
+				<input type="text" name="regno" class="form-control" placeholder="u16xy000"  required>
+				</div>
+				</div>
+
+
+	
+
+		</div>
+		<div class="well">
+		<div class="form-group">
+				
+				<input  type="submit" name="submt" value="submit"/>
+		</div>
+		</div>
+</div>
+<div class="col-sm-3"></div>
+</form>
+
+
+</body>
+</html>
