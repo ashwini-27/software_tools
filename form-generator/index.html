@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+        <style type="text/css">
+          .carousel {
+          width:600px;
+          /*height:360px;*/
+        }
+        </style>
+<body>
+    <div class="container" >
+          <form class="form-horizontal " id="main" style="margin: auto;" action="temp0.php" method="post">
+
+             <div class="container" style="margin-bottom: 50px">
+                  <div style="margin-top: 50px" class="col-sm-8">
+                          <div class="form-group " style="margin:auto;">
+                              <label class="control-label ">Select Format:</label>  
+                                    <div id="myCarousel" class="carousel slide "  data-ride="carousel" data-interval="2000" style="margin-bottom: 20px">
+                            <!-- Indicators -->
+                                          <ol class="carousel-indicators">
+                                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                                          </ol>
+
+                            <!-- Wrapper for slides -->
+                                          <div class="carousel-inner">
+                                          <div class="item active">
+                                            <img src="img0.png" alt="Los Angeles" style="width:100%;"onclick="select(0)">
+                                          </div>
+
+                                          <div class="item">
+                                            <img src="img1.png" alt="Chicago" style="width:100%;" onclick="select(1)">
+                                          </div>
+                                        
+                                          <div class="item">
+                                            <img src="img2.png" alt="New york" style="width:100%;"onclick="select(2)">
+                                          </div>
+                                    </div>
+
+                            <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                      <span class="glyphicon glyphicon-chevron-left"></span>
+                                      <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                      <span class="glyphicon glyphicon-chevron-right"></span>
+                                      <span class="sr-only">Next</span>
+                                    </a>
+                             </div>
+                             </div>
+                  </div>
+              <div class="col-sm-4 card" style="margin-top: 50px;background-color: #ffffff">
+             <div >
+                       <div class="form-group " >
+                          <div>
+                            <label class="control-label">Form Title:</label>
+                            <div>
+                            <input type="text"  class="form-control" name="title" placeholder="dfk;md" />
+                            </div>
+                          </div>
+                       </div>
+              </div>
+
+            <div>
+                         <div class="form-group ">
+                              <label class="control-label " >Action:</label>
+                              <div>
+                                <input class="form-control" type="text" name="Action" placeholder="john doe"/>
+                              </div>
+                         </div>
+            </div>
+
+             <div>
+                         <div class="form-group ">
+                              <label class="control-label " >Background-color:</label>
+                              <div>
+                                <input class="form-control" type="color" name="bgc" placeholder="john doe"/>
+                              </div>
+                         </div>
+            </div>
+
+              <div>
+                         <div class="form-group ">
+                              <label class="control-label " >font-family:</label>
+                              <div>
+                                <input class="form-control" type="text" name="ffa" placeholder="john doe"/>
+                              </div>
+                         </div>
+              </div>
+            <div >
+                       <div class="form-group col-sm-5" style="margin:0;padding-left: 0;float: left;"st >
+                          <div>
+                            <label class="control-label">Form Border:</label>
+                            
+                            <input type="number"  class="form-control " name="border" placeholder="0" />
+                            
+                          </div>
+                       </div>
+                       <div class="col-sm-2"></div>
+                       <div class="form-group col-sm-5" style="margin: auto;"  >
+                          <div>
+                            <label class="control-label">Border Radius:</label>
+                            <input type="number"  class="form-control" name="bradius" placeholder="0" />
+                          </div>
+                       </div>
+                            
+            </div>
+
+            <div>
+                         <div class="form-group ">
+                              <label class="control-label " >Backgroung:</label>
+                              <div>
+                                <input type="file" name="bgi" placeholder="Background-img"/>
+                              </div>
+                         </div>
+            </div>            
+            </div>
+            </div>
+
+
+            <div class="container" style="margin-bottom: 50px;">
+            <div class="panel panel-default " id="inputlist" style="margin: auto;">
+            <div class="panel-heading">add inputs<span class="glyphicon glyphicon-plus" style="float: right;" onclick="newelement('inputlist')"></span></div>
+                  </div>
+
+                  <input type="number" name="noe" value="0" id="noe" visible="false" style="visibility: hidden;" />
+                  <div class="panel panel-default" id="inputgrps" style="margin-top: 50px;margin-bottom: 50px">
+            		<div class="panel-heading">groupinputs<span class="glyphicon glyphicon-plus" style="float: right;" onclick="createg('inputgrps')"></span></div>
+                  </div>
+
+              </div>
+
+<div>              
+<button class="button button-block form-control" type="submit" style="margin-bottom: 50px">submit</button>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+  function select(src){
+
+    document.getElementById("main").setAttribute("Action","temp"+src+".php")
+  
+    document.getElementById("noe").setAttribute("value",src)
+  $('#myCarousel').carousel('pause');
+  alert("class changed");
+  }
+  var i=1;
+  function newelement(id)
+  {
+    alert("you clicked on add button");
+    var keeper=document.createElement("div")
+    keeper.className="panel-body row"
+    keeper.id=i++;
+
+    var keepersspan=document.createElement("div");
+    var labeloffield=document.createElement("label");
+    labeloffield.className="control-label col-sm-2"
+    labeloffield.innerHTML="name of input field:"
+    var inputfieldname=document.createElement('input')
+    inputfieldname.className="form-control col-sm-5"    
+    //.name='fieldname'+str(keeper.id);
+
+
+
+  	inputfieldname.setAttribute("name","field[]");
+    keepersspan.appendChild(labeloffield);
+    var ipwrap=document.createElement("div");
+    ipwrap.className="col-sm-5"
+
+    ipwrap.appendChild(inputfieldname);
+    keepersspan.appendChild(ipwrap);
+    var btn = document.createElement("BUTTON");
+    btn.className="glyphicon glyphicon-remove"
+    btn.onclick=function(){
+
+    var item = document.getElementById(keeper.id);
+    item.parentNode.removeChild(item);
+    };
+    btn.style="float:right;"
+    keepersspan.appendChild(btn);
+
+
+
+    var labelofoptions=document.createElement("label");
+    labelofoptions.className="control-label col-sm-2"
+    labelofoptions.innerHTML="type of input field:"
+    keepersspan.appendChild(labelofoptions);
+
+   // var optionslist=document.createElement("option");
+ // optionslist.setAttribute("value", ["number","text","radio","textfield","submit","radio-group","checkbox","checkbox-group"]);
+    // optionslist.appendChild("number");
+
+
+    var options=document.createElement("select");
+    options.placeholder="select type"
+    options.className=""
+    keepersspan.appendChild(options);
+    keeper.appendChild(keepersspan);
+
+
+    var x = document.createElement("OPTION");
+    x.setAttribute("value", "text");
+    var t = document.createTextNode("Text");
+    x.appendChild(t);
+    options.appendChild(x);
+  	options.setAttribute("name","type[]");
+
+    x = document.createElement("OPTION");
+    x.setAttribute("value", "number");
+    t = document.createTextNode("Number");
+    x.appendChild(t);
+        options.appendChild(x);
+    x = document.createElement("OPTION");
+    x.setAttribute("value", "password");
+    t = document.createTextNode("password");
+    x.appendChild(t);
+    options.appendChild(x);
+    x = document.createElement("OPTION");
+    x.setAttribute("value", "email");
+    t = document.createTextNode("Email");
+    x.appendChild(t);
+        options.appendChild(x);
+    
+
+
+    document.getElementById(id).appendChild(keeper);
+  }
+   function createg(id){
+  // 	var keeper=document.createElement("div")
+  //   keeper.className="panel-body row well"
+  //   keeper.id=i++;
+
+  //   var keepersspan=document.createElement("div");
+  //   keepersspan.className="panel-heading"
+
+
+
+  // 	var placeholders=document.createElement('input');
+  // 	placeholders.setAttribute("placeholder","name");
+  // 	placeholders.setAttribute("name","fieldname")
+  // 	placeholders.className="well"
+  // 	var plwrap=document.createElement("div");
+  //   plwrap.className="panel-body col-sm-3"
+  //   plwrap.appendChild(placeholders);
+  //   keepersspan.appendChild(plwrap);
+
+
+  // 	var placeholders=document.createElement('input');
+  // 	placeholders.setAttribute("placeholder","group name");
+  // 	placeholders.setAttribute("name","fieldname")
+  // 	var plwrap=document.createElement("div");
+  //   plwrap.className="col-sm-3"
+  //   plwrap.appendChild(placeholders);
+  //   keepersspan.appendChild(plwrap);
+
+
+  //   var options=document.createElement("select");
+  //   options.placeholder="select type"
+  //   options.className=""
+  //   keepersspan.appendChild(options);
+  //   keeper.appendChild(keepersspan);
+
+
+
+
+    alert("you clicked on add button");
+    var keeper=document.createElement("div");
+    keeper.className="panel-body row";
+    keeper.id=i++;
+
+    var keepersspan=document.createElement("div");
+    var labeloffield=document.createElement("label");
+    labeloffield.className="control-label col-sm-2";
+    labeloffield.innerHTML="name of input field:";
+    var inputfieldname=document.createElement('input');
+    inputfieldname.className="form-control col-sm-5";
+
+    //.name='fieldname'+str(keeper.id);
+
+
+  	inputfieldname.setAttribute("name","gfield[]");
+    keepersspan.appendChild(labeloffield);
+    var ipwrap=document.createElement("div");
+    ipwrap.className="col-sm-2";
+
+    ipwrap.appendChild(inputfieldname);
+    keepersspan.appendChild(ipwrap);
+
+
+
+  	var placeholders=document.createElement('input');
+  	placeholders.setAttribute("placeholder","group name");
+  	placeholders.setAttribute("name","gname[]");
+  	var plwrap=document.createElement("div");
+    plwrap.className="col-sm-3";
+    plwrap.appendChild(placeholders);
+    keepersspan.appendChild(plwrap);
+
+
+    // var options=document.createElement("select");
+    // options.placeholder="select type";
+    // options.className="";
+    // keepersspan.appendChild(options);
+    // keeper.appendChild(keepersspan);
+
+
+    var btn = document.createElement("BUTTON");
+    btn.className="glyphicon glyphicon-remove";
+    btn.onclick=function(){
+
+    var item = document.getElementById(keeper.id);
+    item.parentNode.removeChild(item);
+    };
+    btn.style="float:right;"
+    keepersspan.appendChild(btn);
+
+
+
+    var labelofoptions=document.createElement("label");
+    labelofoptions.className="control-label col-sm-2";
+    labelofoptions.innerHTML="type of input field:";
+    keepersspan.appendChild(labelofoptions);
+
+   // var optionslist=document.createElement("option");
+ // optionslist.setAttribute("value", ["number","text","radio","textfield","submit","radio-group","checkbox","checkbox-group"]);
+    // optionslist.appendChild("number");
+
+
+    var options=document.createElement("select");
+    options.placeholder="select type"
+    options.className="";
+  	options.setAttribute("name","gtype[]");
+    
+
+
+    var x = document.createElement("OPTION");
+    x.setAttribute("value", "radio");
+    var t = document.createTextNode("radio");
+    x.appendChild(t);
+    options.appendChild(x);
+
+   
+
+
+    x = document.createElement("OPTION");
+    x.setAttribute("value", "CheckBox");
+    t = document.createTextNode("CheckBox");
+    x.appendChild(t);
+    options.appendChild(x);
+
+    keepersspan.appendChild(options);
+	keeper.appendChild(keepersspan);
+
+    document.getElementById(id).appendChild(keeper);
+  }
+  
+</script>
+
+</body>
+</html>
